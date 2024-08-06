@@ -13,9 +13,9 @@ jobs:
       - uses: engineerd/setup-kind@v0.5.0
         with:
           version: v0.11.1
-      - name: Install kubectl
+     - name: Install kubectl (update the URL based on the latest version)
         run: |
-          curl -fsSL -o get_kubectl https://k8s.io/release/stable/bin/linux/amd64/kubectl
+          curl -fsSL -o get_kubectl https://storage.googleapis.com/kubernetes-release/release/v1.25.0/bin/linux/amd64/kubectl
           chmod +x get_kubectl
           sudo mv get_kubectl /usr/local/bin/kubectl
       - name: Deploy application
